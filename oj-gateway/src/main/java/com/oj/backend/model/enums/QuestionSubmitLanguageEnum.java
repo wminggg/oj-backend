@@ -1,4 +1,4 @@
-package com.oj.backend.model.entity;
+package com.oj.backend.model.enums;
 
 import org.apache.commons.lang3.ObjectUtils;
 
@@ -7,24 +7,21 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 题目提交枚举
+ * 题目提交编程语言枚举
  *
  * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
  * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
-public enum QuestionSubmitStatusEnum {
+public enum QuestionSubmitLanguageEnum {
 
-    // 0 - 待判题、1 - 判题中、2 - 成功、3 - 失败
-    WAITING("等待中", 0),
-    RUNNING("判题中", 1),
-    SUCCEED("成功", 2),
-    FAILED("失败", 3);
-
+    JAVA("java", "java"),
+    CPLUSPLUS("cpp", "cpp"),
+    GOLANG("go", "go");
     private final String text;
 
-    private final Integer value;
+    private final String value;
 
-    QuestionSubmitStatusEnum(String text, Integer value) {
+    QuestionSubmitLanguageEnum(String text, String value) {
         this.text = text;
         this.value = value;
     }
@@ -34,7 +31,7 @@ public enum QuestionSubmitStatusEnum {
      *
      * @return
      */
-    public static List<Integer> getValues() {
+    public static List<String> getValues() {
         return Arrays.stream(values()).map(item -> item.value).collect(Collectors.toList());
     }
 
@@ -44,11 +41,11 @@ public enum QuestionSubmitStatusEnum {
      * @param value
      * @return
      */
-    public static QuestionSubmitStatusEnum getEnumByValue(Integer value) {
+    public static QuestionSubmitLanguageEnum getEnumByValue(String value) {
         if (ObjectUtils.isEmpty(value)) {
             return null;
         }
-        for (QuestionSubmitStatusEnum anEnum : QuestionSubmitStatusEnum.values()) {
+        for (QuestionSubmitLanguageEnum anEnum : QuestionSubmitLanguageEnum.values()) {
             if (anEnum.value.equals(value)) {
                 return anEnum;
             }
@@ -56,7 +53,7 @@ public enum QuestionSubmitStatusEnum {
         return null;
     }
 
-    public Integer getValue() {
+    public String getValue() {
         return value;
     }
 

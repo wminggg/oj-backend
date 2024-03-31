@@ -15,7 +15,7 @@ import com.oj.backend.model.vo.QuestionSubmitVO;
 * @createDate 2023-08-07 20:58:53
 */
 public interface QuestionSubmitService extends IService<QuestionSubmit> {
-    
+
     /**
      * 题目提交
      *

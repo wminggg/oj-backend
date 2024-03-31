@@ -1,6 +1,7 @@
 package com.oj.backend.model.vo;
 
 import cn.hutool.json.JSONUtil;
+import com.google.gson.Gson;
 import com.oj.backend.model.entity.Post;
 import java.io.Serializable;
 import java.util.Date;
@@ -16,6 +17,8 @@ import org.springframework.beans.BeanUtils;
 
 @Data
 public class PostVO implements Serializable {
+
+    private final static Gson GSON = new Gson();
 
     /**
      * id
