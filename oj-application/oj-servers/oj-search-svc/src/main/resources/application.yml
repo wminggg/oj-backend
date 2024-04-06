@@ -1,0 +1,5 @@
+# 公共配置文件
+server:
+  port: 30005
+  servlet:
+    context-path: /api/search

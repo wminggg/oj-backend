@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>oj-backend</artifactId>
+        <groupId>com.oj</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <packaging>pom</packaging>
+
+    <artifactId>oj-domain</artifactId>
+
+    <modules>
+        <module>oj-auth-model</module>
+        <module>oj-judge-model</module>
+        <module>oj-question-model</module>
+        <module>oj-sandbox-model</module>
+        <module>oj-search-model</module>
+        <module>oj-storage-model</module>
+        <module>oj-user-model</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <artifactId>oj-common</artifactId>
+            <groupId>com.oj</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

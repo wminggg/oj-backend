@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>oj-backend</artifactId>
+        <groupId>com.oj</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <packaging>pom</packaging>
+
+    <artifactId>oj-client</artifactId>
+
+    <modules>
+        <module>oj-auth-client</module>
+        <module>oj-judge-client</module>
+        <module>oj-question-client</module>
+        <module>oj-sandbox-client</module>
+        <module>oj-search-client</module>
+        <module>oj-storage-client</module>
+        <module>oj-user-client</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <artifactId>oj-common</artifactId>
+            <groupId>com.oj</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

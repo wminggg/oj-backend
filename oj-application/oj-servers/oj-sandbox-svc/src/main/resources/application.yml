@@ -1,0 +1,5 @@
+# 公共配置文件
+server:
+  port: 30004
+  servlet:
+    context-path: /api

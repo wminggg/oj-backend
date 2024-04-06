@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: oj-question
+  profiles:
+    active: default
+  # naocs
+  cloud:
+    nacos:
+      discovery:
+        #必须配置ip地址
+        server-addr: ${nacos.addr}
+        group: DEFAULT_GROUP
+        namespace: ${nacos.discovery.namespace}
+        # 将自己的服务注册到注册中心
+        register-enabled: true
+        username: nacos
+        password: nacos
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        group: DEFAULT_GROUP
+        namespace: ${nacos.config.namespace}
+        enabled: true
+        file-extension: yaml
+        username: nacos
+        password: nacos
+        extension-configs[0]:
+          data-id: database.yaml
+          group: DEFAULT_GROUP
+          refresh: true
+        extension-configs[1]:
+          data-id: resources.yaml
+          group: DEFAULT_GROUP
+          refresh: true
+        extension-configs[2]:
+          data-id: code-sandbox.yaml
+          group: DEFAULT_GROUP
+          refresh: true
