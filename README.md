@@ -1,11 +1,49 @@
-# SpringBoot 项目初始模板
+# myOJ 项目
 
-基于 Java SpringBoot 的项目初始模板，整合了常用框架和主流业务的示例代码。
+## 项目结构
 
-只需 1 分钟即可完成内容网站的后端！！！大家还可以在此基础上快速开发自己的项目。
+- 如何输出项目结构？ （tree -l 3 >> /Users/wming/Desktop/test.txt）
 
+```
+├── oj-application
+|  ├── oj-application-dependencies
+|  ├── oj-gateway
+|  ├── oj-servers
+|  |  ├── oj-auth-svc
+|  |  ├── oj-judge-svc
+|  |  ├── oj-question-svc
+|  |  ├── oj-sandbox-svc
+|  |  ├── oj-search-svc
+|  |  ├── oj-storage-svc
+|  |  ├── oj-user-svc
+├── oj-client
+|  ├── oj-auth-client
+|  ├── oj-judge-client
+|  ├── oj-question-client
+|  ├── oj-sandbox-client
+|  ├── oj-search-client
+|  ├── oj-storage-client
+|  ├── oj-user-client
+├── oj-common
+├── oj-domain
+|  ├── oj-auth-model
+|  ├── oj-judge-model
+|  ├── oj-question-model
+|  ├── oj-sandbox-model
+|  ├── oj-search-model
+|  ├── oj-storage-model
+|  ├── oj-user-model
+├── oj-utility
+|  ├── oj-auth-utility
+|  ├── oj-judge-utility
+|  ├── oj-question-utility
+|  ├── oj-sandbox-utility
+|  ├── oj-search-utility
+|  ├── oj-storage-utility
+|  ├── oj-user-utility
 
-## 模板特点
+```
+## 项目特点
 
 ### 主流框架 & 特性
 

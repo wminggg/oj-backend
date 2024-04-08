@@ -32,8 +32,8 @@ public class GlobalAuthFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest serverHttpRequest = exchange.getRequest();
-        String appId = serverHttpRequest.getHeaders().getFirst("OJ-APP-ID");
-        log.error("OJ-APP-ID: {}", appId);
+        String appId = serverHttpRequest.getHeaders().getFirst("X-APP-ID");
+        log.error("X-APP-ID: {}", appId);
 
         String url = serverHttpRequest.getURI().getPath();
         // 白名单放行

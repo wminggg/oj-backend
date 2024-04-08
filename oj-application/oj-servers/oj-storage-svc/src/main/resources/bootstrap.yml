@@ -1,6 +1,6 @@
 spring:
   application:
-    name: oj-search
+    name: oj-storage
   profiles:
     active: default
   # naocs

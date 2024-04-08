@@ -1,6 +1,7 @@
 package com.oj.gateway;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,10 +20,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableAdminServer
 @EnableDiscoveryClient
+@Slf4j
 public class GatewayApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(GatewayApplication.class, args);
+        log.info("> oj-gateway-服务启动完成 <");
     }
-
 }
