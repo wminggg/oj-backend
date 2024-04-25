@@ -1,5 +1,6 @@
 package com.oj.search;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,12 +17,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @Date: 2024/03/05
  */
 
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class, RedisAutoConfiguration.class})
+@SpringBootApplication
 @EnableDiscoveryClient
+@Slf4j
 public class SearchApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SearchApplication.class, args);
+        log.info("> oj-search-服务启动完成 <");
     }
 
 }

@@ -1,6 +1,6 @@
 package com.oj.sandbox.controller;
 
-import com.oj.sandbox.JavaNativeCodeSandbox;
+import com.oj.sandbox.service.impl.JavaNativeCodeSandbox;
 import com.oj.sandbox.model.ExecuteCodeRequest;
 import com.oj.sandbox.model.ExecuteCodeResponse;
 import org.springframework.web.bind.annotation.GetMapping;

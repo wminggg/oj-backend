@@ -3,9 +3,9 @@ package com.oj.user.svc.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.oj.auth.model.vo.LoginUserVO;
-import com.oj.user.svc.model.entity.User;
-import com.oj.user.svc.model.vo.UserVO;
-import com.oj.user.svc.model.dto.UserQueryRequest;
+import com.oj.user.model.entity.User;
+import com.oj.user.model.vo.UserVO;
+import com.oj.user.model.dto.UserQueryRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

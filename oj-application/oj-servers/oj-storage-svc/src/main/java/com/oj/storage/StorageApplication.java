@@ -1,5 +1,6 @@
 package com.oj.storage;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
@@ -14,12 +15,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @Date: 2024/03/05
  */
 
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class, RedisAutoConfiguration.class})
+@SpringBootApplication
 @EnableDiscoveryClient
+@Slf4j
 public class StorageApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(StorageApplication.class, args);
+        log.info("> oj-storage-服务启动完成 <");
     }
 
 }

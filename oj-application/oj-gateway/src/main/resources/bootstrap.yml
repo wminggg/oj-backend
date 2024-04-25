@@ -41,3 +41,11 @@ spring:
           data-id: gateway.yaml
           group: DEFAULT_GROUP
           refresh: true
+        extension-configs[1]:
+          data-id: database.yaml
+          group: DEFAULT_GROUP
+          refresh: true
+cors:
+  allowedOrigins:
+    - http://localhost:30000  # 开发环境允许的域名
+    - https://myoj.ming  # 线上环境允许的域名

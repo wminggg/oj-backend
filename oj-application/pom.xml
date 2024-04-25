@@ -17,6 +17,7 @@
     <modules>
         <module>oj-servers</module>
         <module>oj-gateway</module>
+        <module>oj-actuator</module>
         <module>oj-application-dependencies</module>
     </modules>
 

@@ -17,17 +17,6 @@
         </dependency>
 
         <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-server</artifactId>
-        </dependency>
-
-        <dependency>
-            <artifactId>oj-application-dependencies</artifactId>
-            <groupId>com.oj</groupId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
             <artifactId>oj-common</artifactId>
             <groupId>com.oj</groupId>
             <version>0.0.1-SNAPSHOT</version>
@@ -52,6 +41,25 @@
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-gateway-spring-boot-starter</artifactId>
+            <version>4.3.0</version>
+        </dependency>
+
+        <!--加入spring-boot-admin连接端-->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${spring-boot-admin-client.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>oj-application-dependencies</artifactId>
+            <groupId>com.oj</groupId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

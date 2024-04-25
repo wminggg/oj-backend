@@ -3,7 +3,7 @@ package com.oj.question.svc.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.oj.user.svc.model.entity.User;
+import com.oj.user.model.entity.User;
 
 import com.oj.question.model.dto.QuestionSubmitAddRequest;
 import com.oj.question.model.dto.QuestionSubmitQueryRequest;

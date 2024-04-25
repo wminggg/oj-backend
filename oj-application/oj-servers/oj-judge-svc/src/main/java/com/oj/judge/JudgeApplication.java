@@ -1,5 +1,6 @@
 package com.oj.judge;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,10 +20,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableDiscoveryClient
 @ComponentScan("com.oj")
 @EnableFeignClients(basePackages = {"com.oj.client"})
+@Slf4j
 public class JudgeApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(JudgeApplication.class, args);
+        log.info("> oj-judge-服务启动完成 <");
     }
 
 }

@@ -1,6 +1,6 @@
 package com.oj.judge.controller.inner;
 
-import com.oj.client.storage.JudgeFeignClient;
+import com.oj.client.judge.JudgeFeignClient;
 import com.oj.judge.judge.JudgeService;
 import com.oj.question.model.entity.QuestionSubmit;
 import org.springframework.web.bind.annotation.PostMapping;

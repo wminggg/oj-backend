@@ -52,16 +52,12 @@
         <mybatis.version>2.2.2</mybatis.version>
         <!-- MyBatis Plus版本 -->
         <mybatis-plus.version>3.5.2</mybatis-plus.version>
+
+        <loadbalancer.version>3.1.5</loadbalancer.version>
     </properties>
 
     <!-- 依赖配置 -->
     <dependencies>
-        <!-- Spring Boot Freemarker Starter -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>
-
         <!-- Spring Boot Web Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -112,12 +108,12 @@
         </dependency>
 
         <!-- Spring Boot DevTools -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
 
         <!-- MySQL Connector Java -->
         <dependency>
@@ -126,17 +122,21 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Spring Boot Configuration Processor -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-loadbalancer</artifactId>
-            <version>3.1.5</version>
+            <version>${loadbalancer.version}</version>
+        </dependency>
+
+        <!-- Spring Boot Redis Starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
         </dependency>
 
         <!-- Lombok -->
@@ -146,11 +146,10 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Tencent Cloud COS API -->
+        <!--健康检查-->
         <dependency>
-            <groupId>com.qcloud</groupId>
-            <artifactId>cos_api</artifactId>
-            <version>5.6.89</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
     </dependencies>
@@ -283,24 +282,24 @@
                 </includes>
                 <targetPath>${project.build.outputDirectory}</targetPath>
             </resource>
-            <resource>
-                <directory>${project.basedir}/src/main/resources/template</directory>
-                <filtering>false</filtering>
-                <includes>
-                    <include>**/*.vm</include>
-                </includes>
-                <targetPath>${project.build.outputDirectory}/template</targetPath>
-            </resource>
-            <resource>
-                <directory>${project.basedir}/src/main/resources/META-INF</directory>
-                <filtering>false</filtering>
-                <targetPath>${project.build.outputDirectory}/META-INF</targetPath>
-            </resource>
-            <resource>
-                <directory>${project.basedir}/src/main/resources/sql</directory>
-                <filtering>false</filtering>
-                <targetPath>${project.build.outputDirectory}/sql</targetPath>
-            </resource>
+<!--            <resource>-->
+<!--                <directory>${project.basedir}/src/main/resources/template</directory>-->
+<!--                <filtering>false</filtering>-->
+<!--                <includes>-->
+<!--                    <include>**/*.vm</include>-->
+<!--                </includes>-->
+<!--                <targetPath>${project.build.outputDirectory}/template</targetPath>-->
+<!--            </resource>-->
+<!--            <resource>-->
+<!--                <directory>${project.basedir}/src/main/resources/META-INF</directory>-->
+<!--                <filtering>false</filtering>-->
+<!--                <targetPath>${project.build.outputDirectory}/META-INF</targetPath>-->
+<!--            </resource>-->
+<!--            <resource>-->
+<!--                <directory>${project.basedir}/src/main/resources/sql</directory>-->
+<!--                <filtering>false</filtering>-->
+<!--                <targetPath>${project.build.outputDirectory}/sql</targetPath>-->
+<!--            </resource>-->
         </resources>
     </build>
 

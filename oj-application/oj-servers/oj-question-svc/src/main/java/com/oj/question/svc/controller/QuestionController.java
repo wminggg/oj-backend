@@ -25,7 +25,7 @@ import com.oj.question.model.vo.QuestionVO;
 import com.oj.question.svc.service.QuestionService;
 import com.oj.question.svc.service.QuestionSubmitService;
 import com.oj.client.user.UserFeignClient;
-import com.oj.user.svc.model.entity.User;
+import com.oj.user.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;

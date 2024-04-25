@@ -10,8 +10,8 @@ create table if not exists user
     id           bigint auto_increment comment 'id' primary key,
     userAccount  varchar(256)                           not null comment '账号',
     userPassword varchar(512)                           not null comment '密码',
-    unionId      varchar(256)                           null comment '微信开放平台id',
-    mpOpenId     varchar(256)                           null comment '公众号openId',
+    unionId      varchar(256)                           null comment '微信id',
+    mpOpenId     varchar(256)                           null comment '公众号id',
     userName     varchar(256)                           null comment '用户昵称',
     userAvatar   varchar(1024)                          null comment '用户头像',
     userProfile  varchar(512)                           null comment '用户简介',
@@ -22,8 +22,8 @@ create table if not exists user
     index idx_unionId (unionId)
     ) comment '用户' collate = utf8mb4_unicode_ci;
 
--- 帖子表
-create table if not exists post
+-- 文章表
+create table if not exists essay
 (
     id         bigint auto_increment comment 'id' primary key,
     title      varchar(512)                       null comment '标题',
@@ -36,31 +36,55 @@ create table if not exists post
     updateTime datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     isDelete   tinyint  default 0                 not null comment '是否删除',
     index idx_userId (userId)
-    ) comment '帖子' collate = utf8mb4_unicode_ci;
+    ) comment '文章' collate = utf8mb4_unicode_ci;
 
--- 帖子点赞表（硬删除）
-create table if not exists post_thumb
+-- 文章点赞表
+create table if not exists essay_post_thumb
 (
     id         bigint auto_increment comment 'id' primary key,
-    postId     bigint                             not null comment '帖子 id',
+    essayId     bigint                             not null comment '文章 id',
     userId     bigint                             not null comment '创建用户 id',
     createTime datetime default CURRENT_TIMESTAMP not null comment '创建时间',
     updateTime datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
-    index idx_postId (postId),
+    index idx_postId (essayId),
     index idx_userId (userId)
-    ) comment '帖子点赞';
+    ) comment '文章点赞记录';
 
--- 帖子收藏表（硬删除）
-create table if not exists post_favour
+-- 文章收藏表
+create table if not exists essay_post_favour
 (
     id         bigint auto_increment comment 'id' primary key,
-    postId     bigint                             not null comment '帖子 id',
+    essayId     bigint                             not null comment '文章 id',
     userId     bigint                             not null comment '创建用户 id',
     createTime datetime default CURRENT_TIMESTAMP not null comment '创建时间',
     updateTime datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
-    index idx_postId (postId),
+    index idx_postId (essayId),
     index idx_userId (userId)
-    ) comment '帖子收藏';
+    ) comment '文章收藏记录';
+
+-- 文章点赞表
+create table if not exists question_post_thumb
+(
+    id         bigint auto_increment comment 'id' primary key,
+    questionId     bigint                             not null comment '题目 id',
+    userId     bigint                             not null comment '创建用户 id',
+    createTime datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    updateTime datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
+    index idx_postId (questionId),
+    index idx_userId (userId)
+    ) comment '文章点赞记录';
+
+-- 文章收藏表
+create table if not exists question_post_favour
+(
+    id         bigint auto_increment comment 'id' primary key,
+    questionId     bigint                             not null comment '题目 id',
+    userId     bigint                             not null comment '创建用户 id',
+    createTime datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    updateTime datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
+    index idx_postId (questionId),
+    index idx_userId (userId)
+    ) comment '文章收藏记录';
 
 -- 题目表
 create table if not exists question
@@ -98,4 +122,4 @@ create table if not exists question_submit
     isDelete   tinyint  default 0                 not null comment '是否删除',
     index idx_questionId (questionId),
     index idx_userId (userId)
-    ) comment '题目提交';
+    ) comment '题目提交记录';

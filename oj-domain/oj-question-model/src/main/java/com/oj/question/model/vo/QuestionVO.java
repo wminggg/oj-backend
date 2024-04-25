@@ -3,7 +3,7 @@ package com.oj.question.model.vo;
 import cn.hutool.json.JSONUtil;
 import com.oj.judge.model.dto.JudgeConfig;
 import com.oj.question.model.entity.Question;
-import com.oj.user.svc.model.vo.UserVO;
+import com.oj.user.model.vo.UserVO;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
