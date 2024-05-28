@@ -2,4 +2,4 @@
 server:
   port: 30004
   servlet:
-    context-path: /api
+    context-path: /api/sandbox

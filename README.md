@@ -17,30 +17,9 @@
 |  |  ├── oj-storage-svc
 |  |  ├── oj-user-svc
 ├── oj-client
-|  ├── oj-auth-client
-|  ├── oj-judge-client
-|  ├── oj-question-client
-|  ├── oj-sandbox-client
-|  ├── oj-search-client
-|  ├── oj-storage-client
-|  ├── oj-user-client
 ├── oj-common
 ├── oj-domain
-|  ├── oj-auth-model
-|  ├── oj-judge-model
-|  ├── oj-question-model
-|  ├── oj-sandbox-model
-|  ├── oj-search-model
-|  ├── oj-storage-model
-|  ├── oj-user-model
 ├── oj-utility
-|  ├── oj-auth-utility
-|  ├── oj-judge-utility
-|  ├── oj-question-utility
-|  ├── oj-sandbox-utility
-|  ├── oj-search-utility
-|  ├── oj-storage-utility
-|  ├── oj-user-utility
 
 ```
 ## 项目特点

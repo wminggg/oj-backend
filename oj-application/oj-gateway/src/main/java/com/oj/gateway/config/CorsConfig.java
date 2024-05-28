@@ -12,6 +12,7 @@ import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 import org.springframework.web.util.pattern.PathPatternParser;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -21,13 +22,13 @@ import java.util.List;
  * @author wming
  * @date 2024/04/06
  */
-@Data
+//@Data
 @Configuration
-@ConfigurationProperties(prefix = "cors")
+//@ConfigurationProperties(prefix = "cors")
 public class CorsConfig {
 
-    // 从配置文件中读取允许的域名列表
-    private List<String> allowedOrigins;
+//    // 从配置文件中读取允许的域名列表
+//    private List<String> allowedOrigins;
 
     @Bean
     public CorsWebFilter corsFilter() {
@@ -37,7 +38,8 @@ public class CorsConfig {
         // 允许携带凭证信息（如 Cookies）
         config.setAllowCredentials(true);
         // 使用配置文件中的允许域名列表
-        config.setAllowedOriginPatterns(allowedOrigins);
+//        config.setAllowedOriginPatterns(allowedOrigins);
+        config.setAllowedOriginPatterns(Collections.singletonList("*"));
         // 允许所有请求头
         config.addAllowedHeader("*");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(new PathPatternParser());

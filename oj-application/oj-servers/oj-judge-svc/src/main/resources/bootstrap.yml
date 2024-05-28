@@ -39,3 +39,7 @@ spring:
           data-id: resources.yaml
           group: DEFAULT_GROUP
           refresh: true
+        extension-configs[2]:
+          data-id: code-sandbox.yaml
+          group: DEFAULT_GROUP
+          refresh: true
